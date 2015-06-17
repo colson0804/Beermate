@@ -50,5 +50,7 @@ group :production do
 	# Use postgreSQL for heroku deployment
 	gem 'pg'
 	gem 'rails_12factor'
+	# Use unicorn web server
+	gem 'unicorn'
 end
 
