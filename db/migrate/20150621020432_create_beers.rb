@@ -4,7 +4,11 @@ class CreateBeers < ActiveRecord::Migration
       t.string :name
       t.string :img
       t.string :url
-      t.text :content
+      t.text :text
+      t.float :ABV
+      t.float :IBU
+      t.float :SRM
+      t.float :OG
 
       t.timestamps null: false
     end
