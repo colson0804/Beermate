@@ -2,8 +2,10 @@ namespace :db do
   desc "TODO"
   task importBeers: :environment do
   	require 'csv'
-  	require 'net/http'
-	require 'json'
+    require 'net/http'
+	# require 'json'
+	# require 'open-uri'
+	#require 'open_uri_redirections'
 
 	csv_text = File.read('Beer Data.csv')
 	csv = CSV.parse(csv_text, :headers => true)
@@ -12,7 +14,15 @@ namespace :db do
 	  name = row.to_hash["name"]
 
 	  image = Google::Search::Image.new(:query => name).first.uri
-	  row["img"] = image
+	  puts image
+
+	  img_local = image.split('/').last
+
+	  open('app/assets/images/' + img_local, 'wb') do |file|
+  		file << open(image, :allow_redirections => :safe).read
+	  end
+
+	  row["img"] = img_local
 	  
 	  Beer.create!(row.to_hash)
 	end

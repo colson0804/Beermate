@@ -24,8 +24,11 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Google image API
-gem "google-search"
-gem "json"
+gem 'google-search'
+gem 'json'
+
+# Open URI Redirections
+gem 'open_uri_redirections'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
