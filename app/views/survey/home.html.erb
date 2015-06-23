@@ -1,0 +1,15 @@
+<h1>Survey#home</h1>
+<p>Find me in app/views/survey/home.html.erb</p>
+<table>
+	<tbody>
+		<% @beers.each do |beer| %>
+		  <tr>
+		    <td><%= beer.name %></td>
+		    <td><%= beer.ABV %></td>
+		    <td><%= beer.IBU %></td>
+		    <td><%= beer.SRM %></td>
+		    <td><%= beer.OG %></td>
+		  </tr>
+		<% end %>
+	</tbody>
+</table>

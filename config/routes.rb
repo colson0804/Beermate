@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'survey#home'
+
   resources :reviews
   resources :users
   # The priority is based upon order of creation: first created -> highest priority.
