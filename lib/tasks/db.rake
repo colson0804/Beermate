@@ -16,13 +16,13 @@ namespace :db do
 	  image = Google::Search::Image.new(:query => name).first.uri
 	  puts image
 
-	  img_local = image.split('/').last
+	  # img_local = image.split('/').last
 
-	  open('app/assets/images/' + img_local, 'wb') do |file|
-  		file << open(image, :allow_redirections => :safe).read
-	  end
+	  # open('app/assets/images/' + img_local, 'wb') do |file|
+  	# 	file << open(image, :allow_redirections => :safe).read
+	  # end
 
-	  row["img"] = img_local
+	  row["img"] = image
 	  
 	  Beer.create!(row.to_hash)
 	end
